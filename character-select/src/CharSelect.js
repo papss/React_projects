@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 
 // var fighters = require('./fighters.json');
+
 class Square extends React.Component {
   render() {
     return (
       <button className="Square">
-         {/* TO DO */}
+         { this.props.value }
       </button>
     );
   }
@@ -14,7 +15,7 @@ class Square extends React.Component {
 
 class CharSelect extends Component {
   renderSquare(i) {
-    return <Square />
+    return <Square value={i} />
   }
 
   render() {
@@ -36,7 +37,7 @@ class CharSelect extends Component {
             {this.renderSquare(7)}
             {this.renderSquare(8)}
           </div>
-        </div> 
+        </div>
       </div>
     );
   }
