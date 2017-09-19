@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserCard from './UserCard';
 
 // TEMPORARY FUNCTIONS:
 
@@ -24,7 +25,7 @@ function UserGreeting(props){
 }
 
 function GuestGreeting(props){
-  return <h1> you are not logged in </h1>; 
+  return <h1> you are not logged in </h1>;
 }
 
 function Greeting(props){
@@ -57,9 +58,11 @@ class SpotifyContainer extends Component {
   render() {
     const isLoggedIn = this.state.isLoggedIn;
     let button = null;
+    let usercard = null;
 
     if (isLoggedIn){
       button = <LogoutButton onClick={this.handleLogoutClick} />
+      usercard = <UserCard />
     } else {
       button = <LoginButton onClick={this.handleLoginClick} />
     }
@@ -69,19 +72,10 @@ class SpotifyContainer extends Component {
         {/* this.state... login/user card */}
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
+        {usercard}
       </div>
     );
   }
 }
 
 export default SpotifyContainer;
-
-
-<div className="login">
-  <div className="left">
-    {/* LEFT SIDE DIV CONTENT */}
-  </div>
-  <div className="right">
-    {/* RIGHT SIDE DIV CONTENT */}
-  </div>
-</div>
