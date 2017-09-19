@@ -1,3 +1,10 @@
+/* ============= CONTAINER STYLES =============== */
+
+.container {
+  width: 100%;
+  text-align: center
+}
+
 /* =============== LOGIN STYLES ================= */
 
 .login {
